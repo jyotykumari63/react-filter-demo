@@ -1,9 +1,6 @@
 import React,{Component} from 'react'
 import { NavLink } from "react-router-dom";
 import { Form } from "react-bootstrap";
-//import { errorMessages } from "../../../constants";
-import icon_eye_none_TELUS_Green from '../../resources/icons/icon_eye_none_TELUS_Green.svg';
-import icon_eye_Gainsboro_green from '../../resources/icons/icon_eye_Gainsboro_green.svg';
 
 
 export default class AboutUs extends Component{
@@ -101,11 +98,6 @@ export default class AboutUs extends Component{
                 </NavLink>
               </div>
             </Form>
-            <span className="position-absolute show-eye-container" >
-              <span className="show-eye" title={passwordInputType === 'text' ? "Hide" : "Show"}>
-                <img alt="" src={passwordInputType === 'text' ? icon_eye_Gainsboro_green : icon_eye_none_TELUS_Green} className="show-password-eye-green position-absolute hand" />
-              </span>
-            </span>
           </div>
         )
     }

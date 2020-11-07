@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {history} from '../../helpers/history';
 import {alertActions} from '../../actions/alter.action';
 import Header from '../Header/Header';
-
+import AboutUs from '../AboutUs/AboutUs'
 class App extends Component{
     constructor(props){
         super(props);
@@ -14,22 +14,15 @@ class App extends Component{
             dispatch(alertActions.clear());            
         });
     }
-    render(){
-       
-        const loggedIn=this.props;
-        
+    render(){        
         return(
             <div className="jumbotron">
-                <h2 style={{'textAlign':'center',color:'#8f3181'}}>Employee Reviews</h2>
+                <h2 style={{'textAlign':'center',color:'#8f3181'}}>Product Details</h2>
                     <Router history={history}>
-                        <div>
-                            {loggedIn.loggedIn &&  <Header/>}
-                            
-                            <Route  path="/login" component={LoginPage}/>
-                            <Route path="/register" component={RegisterPage}/>
-                            <PrivateRoute exact path="/" component={EmpInfo}/>
-                            <PrivateRoute path="/emp-info" component={EmpInfo}/>
-                        </div>
+                    <div className="App">
+                        <div>Filter</div>
+                        <div>Items List</div>
+                    </div>
                     </Router>
                 </div>
         );
@@ -38,10 +31,8 @@ class App extends Component{
 
 function mapStateToProps(state){
     const {alert}=state;
-    const {loggedIn}=state.authentication;
     return {
         alert,
-        loggedIn
     };
 }
 
