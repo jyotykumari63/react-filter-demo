@@ -3,8 +3,9 @@ import { Router,Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {history} from '../../helpers/history';
 import {alertActions} from '../../actions/alter.action';
-import Header from '../Header/Header';
-import AboutUs from '../AboutUs/AboutUs'
+
+import ProductInfo from '../../container/ProductInfo'
+
 class App extends Component{
     constructor(props){
         super(props);
@@ -19,6 +20,7 @@ class App extends Component{
             <div className="jumbotron">
                 <h2 style={{'textAlign':'center',color:'#8f3181'}}>Product Details</h2>
                     <Router history={history}>
+                    <ProductInfo/>
                     <div className="App">
                         <div>Filter</div>
                         <div>Items List</div>
